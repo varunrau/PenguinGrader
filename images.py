@@ -10,11 +10,11 @@ with open("names.csv", "rU") as csvfile:
         	first = False
         	continue
     	name = "".join(row)
-        url = ('https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=' + row[0] + '%20' + row[1] + '&userip=136.152.37.183')
-        url = ('https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=' + "Brian" + '%20' + ] + '&userip=136.152.37.183')
+        url = ('https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=' + row[0] + '%20' + row[1])
         request = urllib2.Request(url)
         response = urllib2.urlopen(request)
         results = simplejson.load(response)
+        print results["responseData"]["results"][0]["unescapedUrl"]
 
 
 
